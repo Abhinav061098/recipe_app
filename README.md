@@ -80,7 +80,7 @@ SpoonFood aims to simplify the process of discovering and preparing diverse reci
     ```
 ##Login Credientials
 
-   If you want to ldont want to create an account
+   If you want to don't want to create an account
    email: demo@gmail.com
    password: Demo@12345
 
