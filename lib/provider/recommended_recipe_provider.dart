@@ -1,5 +1,5 @@
+// recommended_recipe_provider.dart
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../models/recipe.dart';
 import 'favorite_recipes_provider.dart';
 import 'recently_viewed_recipes_provider.dart';
@@ -12,18 +12,15 @@ class RecommendedRecipeProvider with ChangeNotifier {
   List<Recipe> get recommendedRecipes => _recommendedRecipes;
   bool isLoading = false;
 
-  Future<void> fetchRecommendedRecipes(BuildContext context) async {
+  Future<void> fetchRecommendedRecipes(
+    FavoriteRecipesProvider favoriteProvider,
+    RecentlyViewedRecipesProvider viewedProvider,
+    RandomMealProvider randomMealProvider,
+  ) async {
     isLoading = true;
     notifyListeners();
 
     try {
-      final favoriteProvider =
-          Provider.of<FavoriteRecipesProvider>(context, listen: false);
-      final viewedProvider =
-          Provider.of<RecentlyViewedRecipesProvider>(context, listen: false);
-      final randomMealProvider =
-          Provider.of<RandomMealProvider>(context, listen: false);
-
       // Fetch data from providers
       List<Recipe> favorites = favoriteProvider.favoriteRecipes;
       List<Recipe> recentlyViewed = viewedProvider.recentlyViewed;
@@ -73,13 +70,13 @@ class RecommendedRecipeProvider with ChangeNotifier {
       // Keep only 15 items
       _recommendedRecipes
         ..clear()
-        // ignore: unnecessary_null_comparison
         ..addAll(combinedList.where((recipe) => recipe != null).take(15));
 
       print("Recommended Recipes: ${_recommendedRecipes.length}");
     } catch (e) {
       print("Error fetching recommended recipes: $e");
     }
+
     isLoading = false;
     notifyListeners();
   }

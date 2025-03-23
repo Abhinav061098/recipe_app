@@ -16,9 +16,9 @@ ThemeData lightTheme() {
       ),
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color.fromARGB(255, 239, 32, 156),
+      backgroundColor: Color.fromARGB(255, 254, 254, 254),
       titleTextStyle: TextStyle(
-        color: Colors.white,
+        color: Color.fromARGB(255, 0, 0, 0),
         fontSize: 20,
         fontWeight: FontWeight.bold,
         fontFamily: 'Poppins',

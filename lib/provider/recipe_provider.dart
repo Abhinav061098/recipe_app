@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 class RecipeProvider with ChangeNotifier {
   final SpoonfoodService _spoonfoodService = SpoonfoodService();
   List<Recipe> _recipes = [];
-  List<Recipe> _latestRecipes = [];
+  final List<Recipe> _latestRecipes = [];
   bool _isLoading = false;
   List<Recipe> _filteredRecipes = [];
 

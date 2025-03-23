@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "470252396245",
+    "project_id": "spoonfood-f9729",
+    "storage_bucket": "spoonfood-f9729.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470252396245:android:1bcd844c864863c66d8c5c",
+        "android_client_info": {
+          "package_name": "com.example.spoonfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470252396245-1f0lm0m4l4k7cdh8onv6hjko4jms5jl1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm5bb7FbFW4NoZnPVBKdrPRmdJLqsQ8nQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470252396245-1f0lm0m4l4k7cdh8onv6hjko4jms5jl1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "470252396245-uimuh9rsfdf019enbsj7pv44fe0rul7o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.spoonfood"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

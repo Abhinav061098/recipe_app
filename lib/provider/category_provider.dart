@@ -10,7 +10,7 @@ class CategoryProvider with ChangeNotifier {
   final SpoonfoodService _spoonfoodService = SpoonfoodService();
   List<Category> _widgetCategories = [];
   List<Category> _screenCategories = [];
-  List<Recipe> _filteredRecipes = [];
+  final List<Recipe> _filteredRecipes = [];
   final Set<String> _usedImageUrls = {};
   bool _isLoading = false;
   String? _errorMessage;
@@ -20,33 +20,6 @@ class CategoryProvider with ChangeNotifier {
   List<Recipe> get filteredRecipes => _filteredRecipes;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
-
-  // Future<void> filterRecipesByCategory(String category) async {
-  //   _isLoading = true;
-  //   notifyListeners();
-
-  //   try {
-  //     final fetchedRecipes =
-  //         await _spoonfoodService.fetchRecipesByCategory(category);
-  //     _filteredRecipes = fetchedRecipes
-  //         .map((meal) => Recipe.fromJson(meal))
-  //         .where((recipe) =>
-  //             recipe.strCategory?.toLowerCase() == category.toLowerCase())
-  //         .toList();
-
-  //     print(
-  //         'Filtered Recipes: ${_filteredRecipes.map((r) => r.strMeal).toList()}');
-  //     print(
-  //         'Filtered Recipe Categories: ${_filteredRecipes.map((r) => r.strCategory).toList()}');
-  //     _isLoading = false;
-  //     notifyListeners();
-  //   } catch (e) {
-  //     _isLoading = false;
-  //     _errorMessage = e.toString();
-  //     print('Error filtering recipes: $e');
-  //     notifyListeners();
-  //   }
-  // }
 
   Future<void> fetchCategories() async {
     _isLoading = true;

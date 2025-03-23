@@ -1,5 +1,4 @@
 import 'dart:convert'; // Import dart:convert
-import 'package:soopfood/database/app_database.dart'; // Import the Drift database
 
 class Recipe {
   final String idMeal;
@@ -79,34 +78,34 @@ class Recipe {
     };
   }
 
-  CachedRecipe toCachedRecipe() {
-    return CachedRecipe(
-      idMeal: idMeal,
-      strMeal: strMeal,
-      strMealThumb: strMealThumb,
-      strInstructions: strInstructions,
-      strSource: strSource,
-      strCategory: strCategory,
-      strArea: strArea,
-      strYoutube: strYoutube,
-      ingredientsJson: json.encode(ingredients), // Store ingredients as JSON
-    );
-  }
+  // CachedRecipe toCachedRecipe() {
+  //   return CachedRecipe(
+  //     idMeal: idMeal,
+  //     strMeal: strMeal,
+  //     strMealThumb: strMealThumb,
+  //     strInstructions: strInstructions,
+  //     strSource: strSource,
+  //     strCategory: strCategory,
+  //     strArea: strArea,
+  //     strYoutube: strYoutube,
+  //     ingredientsJson: json.encode(ingredients), // Store ingredients as JSON
+  //   );
+  // }
 
-  factory Recipe.fromCachedRecipe(CachedRecipe cachedRecipe) {
-    return Recipe(
-      idMeal: cachedRecipe.idMeal,
-      strMeal: cachedRecipe.strMeal,
-      strMealThumb: cachedRecipe.strMealThumb ?? '',
-      strInstructions: cachedRecipe.strInstructions,
-      strSource: cachedRecipe.strSource,
-      strCategory: cachedRecipe.strCategory,
-      strArea: cachedRecipe.strArea,
-      strYoutube: cachedRecipe.strYoutube,
-      ingredients: cachedRecipe.ingredientsJson !=
-              null // Handle null ingredientsJson
-          ? Map<String, String>.from(json.decode(cachedRecipe.ingredientsJson!))
-          : {}, // Return empty map if ingredientsJson is null
-    );
-  }
+  // factory Recipe.fromCachedRecipe(CachedRecipe cachedRecipe) {
+  //   return Recipe(
+  //     idMeal: cachedRecipe.idMeal,
+  //     strMeal: cachedRecipe.strMeal,
+  //     strMealThumb: cachedRecipe.strMealThumb ?? '',
+  //     strInstructions: cachedRecipe.strInstructions,
+  //     strSource: cachedRecipe.strSource,
+  //     strCategory: cachedRecipe.strCategory,
+  //     strArea: cachedRecipe.strArea,
+  //     strYoutube: cachedRecipe.strYoutube,
+  //     ingredients: cachedRecipe.ingredientsJson !=
+  //             null // Handle null ingredientsJson
+  //         ? Map<String, String>.from(json.decode(cachedRecipe.ingredientsJson!))
+  //         : {}, // Return empty map if ingredientsJson is null
+  //   );
+  // }
 }

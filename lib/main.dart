@@ -1,27 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 import 'package:soopfood/provider/meal_of_day_provider.dart';
 import 'package:soopfood/provider/recipe_provider.dart';
 import 'package:soopfood/provider/category_provider.dart';
 import 'package:soopfood/provider/favorite_recipes_provider.dart';
-import 'package:soopfood/provider/recent_search_provider.dart';
+// import 'package:soopfood/provider/recent_search_provider.dart';
 import 'package:soopfood/provider/recently_viewed_recipes_provider.dart';
 import 'package:soopfood/provider/random_meal_provider.dart';
 import 'package:soopfood/provider/recommended_recipe_provider.dart';
 import 'package:soopfood/provider/loading_provider.dart';
 import 'package:soopfood/provider/cuisine_list_provider.dart';
-import 'package:soopfood/provider/cuisine_recipe_provider.dart';
 import 'package:soopfood/provider/latest_recipe_provider.dart';
+import 'package:soopfood/screens/login_screen/login_screen.dart';
+import 'package:soopfood/screens/register_screen/register_screen.dart';
 import 'package:soopfood/theme.dart';
-import 'package:soopfood/screens/home_screen.dart';
-import 'package:soopfood/database/app_database.dart';
+import 'package:soopfood/screens/navigation_bar_screen/home_screen.dart';
+// import 'package:soopfood/database/app_database.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'wrappers/auth_wrapper.dart';
+import 'screens/login_screen/forgot_password_screen.dart';
 
 // ValueNotifier to manage theme mode changes
 final ValueNotifier<ThemeMode> themeModeNotifier =
     ValueNotifier(ThemeMode.light);
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -33,17 +41,17 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         // Provider for the AppDatabase
-        Provider<AppDatabase>(
-          create: (context) {
-            try {
-              return AppDatabase();
-            } catch (e) {
-              print('Error creating AppDatabase: $e');
-              return AppDatabase(); // Or handle the error appropriately
-            }
-          },
-          dispose: (context, db) => db.close(),
-        ),
+        // Provider<AppDatabase>(
+        //   create: (context) {
+        //     try {
+        //       return AppDatabase();
+        //     } catch (e) {
+        //       print('Error creating AppDatabase: $e');
+        //       return AppDatabase(); // Or handle the error appropriately
+        //     }
+        //   },
+        //   dispose: (context, db) => db.close(),
+        // ),
         // ChangeNotifierProvider for RecipeProvider
         ChangeNotifierProvider(
           create: (context) {
@@ -78,16 +86,16 @@ class MyApp extends StatelessWidget {
           },
         ),
         // ChangeNotifierProvider for RecentSearchProvider
-        ChangeNotifierProvider(
-          create: (context) {
-            try {
-              return RecentSearchProvider();
-            } catch (e) {
-              print('Error creating RecentSearchProvider: $e');
-              return RecentSearchProvider(); // Or handle appropriately
-            }
-          },
-        ),
+        // ChangeNotifierProvider(
+        //   create: (context) {
+        //     try {
+        //       return RecentSearchProvider();
+        //     } catch (e) {
+        //       print('Error creating RecentSearchProvider: $e');
+        //       return RecentSearchProvider(); // Or handle appropriately
+        //     }
+        //   },
+        // ),
         // ChangeNotifierProvider for RandomMealProvider
         ChangeNotifierProvider(
           create: (context) {
@@ -190,11 +198,17 @@ class MyApp extends StatelessWidget {
         valueListenable: themeModeNotifier,
         builder: (context, themeMode, child) {
           return MaterialApp(
-            title: 'SoopFood',
+            title: 'SpoonFood',
             theme: lightTheme(),
             darkTheme: darkTheme(),
             themeMode: themeMode,
-            home: HomeScreen(),
+            home: AuthWrapper(),
+            routes: {
+              '/login': (context) => LoginScreen(),
+              '/home': (context) => HomeScreen(),
+              '/register': (context) => RegisterScreen(),
+              '/forgot': (context) => ForgotPasswordScreen(),
+            },
           );
         },
       ),

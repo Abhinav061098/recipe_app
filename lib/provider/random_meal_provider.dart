@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../services/spoonfood_service.dart';
 import 'dart:math';
 import '../models/recipe.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
 
 class RandomMealProvider with ChangeNotifier {
   final SpoonfoodService _spoonfoodService = SpoonfoodService();
