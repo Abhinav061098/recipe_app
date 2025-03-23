@@ -189,10 +189,6 @@ SpoonFood aims to simplify the process of discovering and preparing diverse reci
         └── Poppins-Bold.ttf
         └── Poppins-Regular.ttf
         └── Poppins-SemiBold.ttf
-    └── 📁icons
-        └── non_veg.svg
-        └── veg.svg
-        └── vegan.svg
     └── 📁images
         └── logo.png
 ```
