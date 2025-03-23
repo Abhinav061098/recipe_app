@@ -1,6 +1,5 @@
-// lib/widgets/shimmer/meal_of_day_shimmer.dart
 import 'package:flutter/material.dart';
-import 'package:soopfood/shimmers/shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'package:soopfood/shimmers/shimmer_loading.dart';
 
 class MealOfDayShimmer extends StatelessWidget {
   const MealOfDayShimmer({super.key});
@@ -19,7 +18,6 @@ class MealOfDayShimmer extends StatelessWidget {
           height: 250.0,
           child: Row(
             children: [
-              // Left Half: Image with Gradient Overlay (Shimmer)
               Expanded(
                 flex: 1,
                 child: ClipRRect(
@@ -28,11 +26,10 @@ class MealOfDayShimmer extends StatelessWidget {
                     bottomLeft: Radius.circular(24),
                   ),
                   child: Container(
-                    color: Colors.grey[800], // Placeholder color
+                    color: Colors.grey[800],
                   ),
                 ),
               ),
-              // Right Half: Text with Stylish Design (Shimmer)
               Expanded(
                 flex: 1,
                 child: Padding(
@@ -43,8 +40,8 @@ class MealOfDayShimmer extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: 180, // Approximate width of the title
-                        height: 30, // Approximate height of the title
+                        width: 180,
+                        height: 30,
                         color: Colors.grey[800],
                       ),
                       SizedBox(height: 8),
@@ -55,16 +52,14 @@ class MealOfDayShimmer extends StatelessWidget {
                           endIndent: 20),
                       SizedBox(height: 8),
                       Container(
-                        width: 150, // Approximate width of the meal name
-                        height: 25, // Approximate height of the meal name
+                        width: 150,
+                        height: 25,
                         color: Colors.grey[800],
                       ),
                       SizedBox(height: 8),
                       Container(
-                        width:
-                            100, // Approximate width of the tap to explore text
-                        height:
-                            16, // Approximate height of the tap to explore text
+                        width: 100,
+                        height: 16,
                         color: Colors.grey[800],
                       ),
                     ],

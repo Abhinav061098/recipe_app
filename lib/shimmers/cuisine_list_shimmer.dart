@@ -1,6 +1,5 @@
-// lib/widgets/shimmer/cuisine_list_shimmer.dart
 import 'package:flutter/material.dart';
-import 'shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'shimmer_loading.dart';
 
 class CuisineListShimmer extends StatelessWidget {
   const CuisineListShimmer({super.key});

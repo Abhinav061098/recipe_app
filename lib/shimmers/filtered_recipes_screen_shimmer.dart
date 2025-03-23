@@ -1,6 +1,5 @@
-// lib/screens/shimmer/filtered_recipes_screen_shimmer.dart
 import 'package:flutter/material.dart';
-import 'package:soopfood/shimmers/shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'package:soopfood/shimmers/shimmer_loading.dart';
 
 class FilteredRecipesScreenShimmer extends StatelessWidget {
   const FilteredRecipesScreenShimmer({super.key});
@@ -16,8 +15,8 @@ class FilteredRecipesScreenShimmer extends StatelessWidget {
           mainAxisSpacing: 12.0,
           childAspectRatio: 0.8,
         ),
-        itemCount: 6, // Number of shimmer items (adjust as needed)
-        physics: const NeverScrollableScrollPhysics(), // Disable scrolling
+        itemCount: 6,
+        physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return ShimmerLoading(
             child: Card(
@@ -29,7 +28,7 @@ class FilteredRecipesScreenShimmer extends StatelessWidget {
               child: Stack(
                 children: [
                   Container(
-                    color: Colors.grey[300], // Placeholder image
+                    color: Colors.grey[300],
                   ),
                   Positioned(
                     bottom: 0,
@@ -50,8 +49,8 @@ class FilteredRecipesScreenShimmer extends StatelessWidget {
                           EdgeInsets.symmetric(vertical: 10, horizontal: 8),
                       child: Container(
                         width: double.infinity,
-                        height: 16, // Approximate text height
-                        color: Colors.grey[400], // Placeholder text
+                        height: 16,
+                        color: Colors.grey[400],
                       ),
                     ),
                   ),

@@ -65,7 +65,6 @@ class AuthService {
       if (user != null) {
         await user.updateDisplayName(username);
 
-        // Store user data in Firestore
         await _firestore.collection('users').doc(user.uid).set({
           'username': username,
           'phoneNumber': phoneNumber,

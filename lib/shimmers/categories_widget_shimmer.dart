@@ -1,6 +1,5 @@
-// lib/widgets/shimmer/categories_widget_shimmer.dart
 import 'package:flutter/material.dart';
-import 'shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'shimmer_loading.dart';
 
 class CategoriesWidgetShimmer extends StatelessWidget {
   const CategoriesWidgetShimmer({super.key});
@@ -8,16 +7,16 @@ class CategoriesWidgetShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 120.0, // Adjust height as needed
+      height: 120.0,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 6, // Adjust number of shimmer categories
+        itemCount: 6,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: ShimmerLoading(
               child: Container(
-                width: 100.0, // Adjust width as needed
+                width: 100.0,
                 decoration: BoxDecoration(
                   color: Colors.grey[300],
                   borderRadius: BorderRadius.circular(10),

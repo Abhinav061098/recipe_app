@@ -1,5 +1,3 @@
-// latest_recipe_provider.dart
-
 import 'package:flutter/material.dart';
 import '../services/spoonfood_service.dart';
 import '../models/recipe.dart';

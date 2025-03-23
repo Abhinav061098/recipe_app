@@ -1,6 +1,5 @@
-// lib/screens/shimmer/categories_screen_shimmer.dart
 import 'package:flutter/material.dart';
-import 'package:soopfood/shimmers/shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'package:soopfood/shimmers/shimmer_loading.dart';
 
 class CategoriesScreenShimmer extends StatelessWidget {
   const CategoriesScreenShimmer({super.key});
@@ -16,7 +15,7 @@ class CategoriesScreenShimmer extends StatelessWidget {
           mainAxisSpacing: 12.0,
           childAspectRatio: 0.85,
         ),
-        itemCount: 6, // Number of shimmer items (adjust as needed)
+        itemCount: 6,
         itemBuilder: (context, index) {
           return ShimmerLoading(
             child: Card(
@@ -32,7 +31,7 @@ class CategoriesScreenShimmer extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(15)),
                       child: Container(
-                        color: Colors.grey[300], // Placeholder image
+                        color: Colors.grey[300],
                       ),
                     ),
                   ),
@@ -45,9 +44,9 @@ class CategoriesScreenShimmer extends StatelessWidget {
                     ),
                     child: Center(
                       child: Container(
-                        width: 80, // Approximate text width
-                        height: 16, // Approximate text height
-                        color: Colors.grey[400], // Placeholder text
+                        width: 80,
+                        height: 16,
+                        color: Colors.grey[400],
                       ),
                     ),
                   ),

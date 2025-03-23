@@ -1,6 +1,5 @@
-// lib/screens/shimmer/cuisine_recipes_screen_shimmer.dart
 import 'package:flutter/material.dart';
-import 'package:soopfood/shimmers/shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'package:soopfood/shimmers/shimmer_loading.dart';
 
 class CuisineRecipesScreenShimmer extends StatelessWidget {
   const CuisineRecipesScreenShimmer({super.key});
@@ -10,8 +9,8 @@ class CuisineRecipesScreenShimmer extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: ListView.builder(
-        itemCount: 6, // Number of shimmer items (adjust as needed)
-        physics: const NeverScrollableScrollPhysics(), // Disable scrolling
+        itemCount: 6,
+        physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return ShimmerLoading(
             child: Card(
@@ -30,7 +29,7 @@ class CuisineRecipesScreenShimmer extends StatelessWidget {
                     child: Container(
                       width: 110,
                       height: 110,
-                      color: Colors.grey.shade300, // Placeholder image
+                      color: Colors.grey.shade300,
                     ),
                   ),
                   Expanded(
@@ -40,15 +39,15 @@ class CuisineRecipesScreenShimmer extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            width: 150, // Approximate text width
-                            height: 20, // Approximate text height
-                            color: Colors.grey.shade400, // Placeholder text
+                            width: 150,
+                            height: 20,
+                            color: Colors.grey.shade400,
                           ),
                           const SizedBox(height: 6),
                           Container(
-                            width: 100, // Approximate text width
-                            height: 16, // Approximate text height
-                            color: Colors.grey.shade400, // Placeholder text
+                            width: 100,
+                            height: 16,
+                            color: Colors.grey.shade400,
                           ),
                         ],
                       ),

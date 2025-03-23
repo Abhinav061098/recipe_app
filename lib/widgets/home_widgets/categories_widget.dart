@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:shimmer/shimmer.dart'; // Import shimmer
+import 'package:shimmer/shimmer.dart';
 import '../../screens/sub_screen/filtered_recipes_screen.dart';
 import '../../provider/category_provider.dart';
 import '../../provider/recipe_provider.dart';
@@ -28,8 +28,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
       builder: (context, categoryProvider, child) {
         if (categoryProvider.isLoading ||
             categoryProvider.widgetCategories.isEmpty) {
-          // Check loading state
-          return _buildShimmerLoading(); // Show shimmer loading
+          return _buildShimmerLoading();
         }
         return SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -104,8 +103,7 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
         child: Row(
           children: List.generate(
             8,
-            (index) => // Generates 8 shimmer items. Adjust as needed
-                Container(
+            (index) => Container(
               width: 140,
               margin:
                   const EdgeInsets.symmetric(horizontal: 6.0, vertical: 8.0),

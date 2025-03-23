@@ -25,7 +25,7 @@ class MealOfDayProvider with ChangeNotifier {
         notifyListeners();
       } catch (e) {
         print("Error loading meal: $e");
-        await fetchMealOfDay(); // If shared preferences fails, load from network
+        await fetchMealOfDay();
       }
     } else {
       await fetchMealOfDay();

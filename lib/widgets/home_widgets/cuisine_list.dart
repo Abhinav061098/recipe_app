@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:soopfood/provider/recipe_provider.dart';
 import '../../screens/sub_screen/cuisine_recipes_screen.dart';
 import '../../provider/cuisine_list_provider.dart';
-import '../../shimmers/cuisine_list_shimmer.dart'; // Import the shimmer widget
+import '../../shimmers/cuisine_list_shimmer.dart';
 
 class CuisineList extends StatelessWidget {
   const CuisineList({super.key});
@@ -14,9 +14,8 @@ class CuisineList extends StatelessWidget {
       builder: (context, cuisineListProvider, child) {
         final cuisines = cuisineListProvider.getCuisines();
 
-        // Show shimmer loading if cuisines list is empty (i.e., loading)
         if (cuisines.isEmpty) {
-          return CuisineListShimmer(); // Use your custom shimmer effect here
+          return CuisineListShimmer();
         }
 
         return SizedBox(
@@ -48,16 +47,15 @@ class CuisineList extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        color: Colors.black87, // Softer color for text
+                        color: Colors.black87,
                       ),
                     ),
-                    backgroundColor:
-                        Colors.grey[200], // Light, minimal background
+                    backgroundColor: Colors.grey[200],
                     padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    elevation: 2, // Slight elevation for subtle depth
+                    elevation: 2,
                   ),
                 ),
               );

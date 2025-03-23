@@ -28,10 +28,10 @@ class FavoriteRecipesProvider with ChangeNotifier {
             .toList();
       } catch (e) {
         print('Error decoding favorites from SharedPreferences: $e');
-        _favoriteRecipes = []; // Clear if decoding fails
+        _favoriteRecipes = [];
       }
     } else {
-      _favoriteRecipes = []; // Initialize to empty list if no data
+      _favoriteRecipes = [];
     }
 
     _isLoading = false;
@@ -63,7 +63,6 @@ class FavoriteRecipesProvider with ChangeNotifier {
   }
 
   Future<bool> isFavorite(Recipe recipe) async {
-    // Make it async
     return _favoriteRecipes.any((r) => r.idMeal == recipe.idMeal);
   }
 

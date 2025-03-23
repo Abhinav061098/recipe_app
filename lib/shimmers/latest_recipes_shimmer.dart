@@ -1,6 +1,5 @@
-// lib/widgets/shimmer/latest_recipes_shimmer.dart
 import 'package:flutter/material.dart';
-import 'shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'shimmer_loading.dart';
 
 class LatestRecipesShimmer extends StatelessWidget {
   const LatestRecipesShimmer({super.key});

@@ -9,8 +9,7 @@ class Category {
     return Category(
       name: json['strCategory'],
       imageUrl: json['strCategoryThumb'],
-      recipeId:
-          json['idMeal'], // Assuming 'idMeal' is present if you are using it.
+      recipeId: json['idMeal'],
     );
   }
 

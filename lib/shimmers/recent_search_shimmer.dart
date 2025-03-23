@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soopfood/shimmers/shimmer_loading.dart'; // Import the shimmer loading widget
+import 'package:soopfood/shimmers/shimmer_loading.dart';
 
 class RecentSearchShimmer extends StatelessWidget {
   const RecentSearchShimmer({super.key});
@@ -13,8 +13,8 @@ class RecentSearchShimmer extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           child: ShimmerLoading(
             child: Container(
-              width: 150, // Approximate width of the title
-              height: 20, // Approximate height of the title
+              width: 150,
+              height: 20,
               color: Colors.grey[300],
             ),
           ),
@@ -32,8 +32,8 @@ class RecentSearchShimmer extends StatelessWidget {
                   child: ShimmerLoading(
                     child: Chip(
                       label: Container(
-                        width: 80, // Approximate chip width
-                        height: 16, // Approximate chip height
+                        width: 80,
+                        height: 16,
                         color: Colors.grey[300],
                       ),
                       backgroundColor: Colors.white,

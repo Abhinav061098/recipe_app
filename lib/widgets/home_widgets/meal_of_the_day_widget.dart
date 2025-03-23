@@ -84,7 +84,6 @@ class _MealOfDayWidgetState extends State<MealOfDayWidget> {
                           horizontal: 16.0,
                         ),
                         child: SingleChildScrollView(
-                          // Added SingleChildScrollView
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             mainAxisAlignment: MainAxisAlignment.center,

@@ -45,7 +45,7 @@ class _PhoneLoginFormState extends State<PhoneLoginForm> {
             builder: (context) => VerifyPhoneOtpScreen(
               verificationId: verificationId,
               phoneNumber: phoneNumber,
-              username: '', // Username is not required for login
+              username: '',
             ),
           ),
         );
@@ -134,11 +134,11 @@ class _PhoneLoginFormState extends State<PhoneLoginForm> {
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               padding: EdgeInsets.symmetric(vertical: 14),
-              backgroundColor: Colors.blueAccent, // Blue background
+              backgroundColor: Colors.blueAccent,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12), // Rounded corners
+                borderRadius: BorderRadius.circular(12),
               ),
-              minimumSize: Size(double.infinity, 0), // Full width
+              minimumSize: Size(double.infinity, 0),
             ),
             onPressed: () {
               if (_formKey.currentState!.validate()) {

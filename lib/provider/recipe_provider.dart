@@ -49,7 +49,6 @@ class RecipeProvider with ChangeNotifier {
     }
   }
 
-  // Modified fetchRecipes to include BuildContext
   Future<void> fetchRecipes(
       String query, String cuisine, BuildContext context) async {
     print('fetchRecipes called with query: $query and cuisine: $cuisine');
@@ -62,8 +61,7 @@ class RecipeProvider with ChangeNotifier {
       if (query.isNotEmpty) {
         final cuisineProvider =
             Provider.of<CuisineListProvider>(context, listen: false);
-        final cuisineList =
-            cuisineProvider.getCuisines(); // Access cuisineList via provider
+        final cuisineList = cuisineProvider.getCuisines();
         if (cuisineList.any((c) => c.toLowerCase() == query.toLowerCase())) {
           // Search by Cuisine
           apiUrl =
@@ -107,8 +105,6 @@ class RecipeProvider with ChangeNotifier {
         notifyListeners();
         return;
       }
-
-      // Fetch data if apiUrl is set
       if (apiUrl.isNotEmpty) {
         final response = await http.get(Uri.parse(apiUrl));
 

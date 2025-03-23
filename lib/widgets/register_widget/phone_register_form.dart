@@ -104,7 +104,6 @@ class _PhoneRegisterFormState extends State<PhoneRegisterForm> {
       key: _formKey,
       child: Column(
         children: <Widget>[
-          // Username TextField
           _buildTextField(
             label: 'Username',
             icon: Icons.person,
@@ -112,8 +111,6 @@ class _PhoneRegisterFormState extends State<PhoneRegisterForm> {
                 val == null || val.isEmpty ? 'Enter a username' : null,
             onChanged: (val) => setState(() => username = val),
           ),
-
-          // Phone Number TextField
           _buildTextField(
             label: 'Phone Number',
             icon: Icons.phone,
@@ -129,10 +126,7 @@ class _PhoneRegisterFormState extends State<PhoneRegisterForm> {
             },
             onChanged: (val) => setState(() => phoneNumber = val),
           ),
-
           SizedBox(height: 15),
-
-          // Use Password Instead of OTP Checkbox
           Row(
             children: [
               Checkbox(
@@ -146,8 +140,6 @@ class _PhoneRegisterFormState extends State<PhoneRegisterForm> {
               Text('Use Password Instead of OTP'),
             ],
           ),
-
-          // Password Fields (if using password)
           if (_usePassword) ...[
             _buildTextField(
               label: 'Password',
@@ -165,10 +157,7 @@ class _PhoneRegisterFormState extends State<PhoneRegisterForm> {
               onChanged: (val) => setState(() => confirmPassword = val),
             ),
           ],
-
           SizedBox(height: 20),
-
-          // Register Button
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.blueAccent,
@@ -201,7 +190,6 @@ class _PhoneRegisterFormState extends State<PhoneRegisterForm> {
     );
   }
 
-  // Custom method to build the TextFields with icons and improved styling
   Widget _buildTextField({
     required String label,
     required IconData icon,

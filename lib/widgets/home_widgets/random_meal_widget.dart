@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:soopfood/services/spoonfood_service.dart';
 import 'package:soopfood/models/recipe.dart';
 import '../../screens/sub_screen/recipe_details_screen.dart';
-import '../../shimmers/random_meal_shimmer.dart'; // Import the shimmer widget
+import '../../shimmers/random_meal_shimmer.dart';
 
 class RandomMealWidget extends StatefulWidget {
   const RandomMealWidget({super.key});
@@ -44,15 +44,13 @@ class _RandomMealWidgetState extends State<RandomMealWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Conditionally display the "Explore Recipes 🍽️" text based on the loading state
         FutureBuilder<List<Recipe>>(
           future: _randomMealsFuture,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return RandomMealShimmer(); // Show shimmer widget while loading
+              return RandomMealShimmer();
             }
 
-            // Show the "Explore Recipes 🍽️" text only when loading is finished
             if (snapshot.connectionState != ConnectionState.waiting) {
               return Padding(
                 padding:
@@ -63,27 +61,23 @@ class _RandomMealWidgetState extends State<RandomMealWidget> {
                 ),
               );
             }
-            return SizedBox(); // Empty sized box for shimmer state
+            return SizedBox();
           },
         ),
         SizedBox(height: 6),
-        // FutureBuilder to display meals or handle error/loading state
         FutureBuilder<List<Recipe>>(
           future: _randomMealsFuture,
           builder: (context, snapshot) {
-            // Show shimmer loading while waiting for data
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return RandomMealShimmer(); // Show shimmer widget
+              return RandomMealShimmer();
             }
 
-            // Error handling if the data fails to load
             if (snapshot.hasError ||
                 snapshot.data == null ||
                 snapshot.data!.isEmpty) {
               return Center(child: Text("Failed to load meals. Try again!"));
             }
 
-            // Data is available, build the meal list
             return SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -91,7 +85,7 @@ class _RandomMealWidgetState extends State<RandomMealWidget> {
                   return GestureDetector(
                     onTap: () => navigateToRecipeDetail(meal),
                     child: Container(
-                      width: 120, // Reduced width
+                      width: 120,
                       margin: EdgeInsets.all(6.0),
                       child: Card(
                         elevation: 3,
@@ -109,7 +103,7 @@ class _RandomMealWidgetState extends State<RandomMealWidget> {
                                 meal.strMealThumb,
                                 fit: BoxFit.cover,
                                 width: double.infinity,
-                                height: 100, // Reduced height
+                                height: 100,
                               ),
                             ),
                             Padding(

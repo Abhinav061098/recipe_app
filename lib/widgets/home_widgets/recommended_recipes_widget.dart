@@ -32,14 +32,12 @@ class _RecommendedRecipesWidgetState extends State<RecommendedRecipesWidget> {
     final randomMealProvider =
         Provider.of<RandomMealProvider>(context, listen: false);
 
-    // Ensure you're not updating state during the build process
     await Future.wait([
       favoriteProvider.loadFavorites(),
       viewedProvider.loadRecentlyViewed(),
       randomMealProvider.fetchRandomMeal(),
     ]);
 
-    // Delaying the fetchRecommendedRecipes call to after the build phase
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
         Provider.of<RecommendedRecipeProvider>(context, listen: false)

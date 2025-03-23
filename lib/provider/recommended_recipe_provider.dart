@@ -1,4 +1,3 @@
-// recommended_recipe_provider.dart
 import 'package:flutter/material.dart';
 import '../models/recipe.dart';
 import 'favorite_recipes_provider.dart';
@@ -21,29 +20,12 @@ class RecommendedRecipeProvider with ChangeNotifier {
     notifyListeners();
 
     try {
-      // Fetch data from providers
       List<Recipe> favorites = favoriteProvider.favoriteRecipes;
       List<Recipe> recentlyViewed = viewedProvider.recentlyViewed;
       List<Recipe> randomMeals = [
         if (randomMealProvider.randomMeal != null)
           randomMealProvider.randomMeal!
       ];
-
-      print("Favorites: ${favorites.length}");
-      print("Recently Viewed: ${recentlyViewed.length}");
-      print("Random Meals: ${randomMeals.length}");
-
-      // If any of the lists are empty, log an error
-      if (favorites.isEmpty) {
-        print("Favorite list is empty!");
-      }
-      if (recentlyViewed.isEmpty) {
-        print("Recently Viewed list is empty!");
-      }
-      if (randomMeals.isEmpty) {
-        print("Random Meals list is empty!");
-      }
-
       // Combine all lists & remove duplicates using a Set
       Set<String> uniqueRecipeIds = {}; // Stores unique IDs
       List<Recipe> combinedList = [];

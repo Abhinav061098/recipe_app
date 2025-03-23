@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import '../../../../services/auth_service.dart'; // Adjust the path as needed
+import '../../../../services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class EmailRegisterForm extends StatefulWidget {
   final Function(bool) setLoading;
   final Function(String) setError;
-  final Function(String)
-      onRegistrationSuccess; // New callback for success message
+  final Function(String) onRegistrationSuccess;
 
   const EmailRegisterForm({
     super.key,
     required this.setLoading,
     required this.setError,
-    required this.onRegistrationSuccess, // Pass the callback
+    required this.onRegistrationSuccess,
   });
 
   @override
@@ -75,9 +74,8 @@ class _EmailRegisterFormState extends State<EmailRegisterForm> {
         if (user != null) {
           await _saveUserData(user, username);
 
-          // Notify success through the callback
           widget.onRegistrationSuccess(
-              'Registration Successful! Please login to continue.'); // Pass success message
+              'Registration Successful! Please login to continue.');
 
           widget.setLoading(false);
         } else {
@@ -100,7 +98,6 @@ class _EmailRegisterFormState extends State<EmailRegisterForm> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          // Username TextField
           _buildTextField(
             label: 'Username',
             icon: Icons.person,
@@ -108,8 +105,6 @@ class _EmailRegisterFormState extends State<EmailRegisterForm> {
                 val == null || val.isEmpty ? 'Enter a username' : null,
             onChanged: (val) => setState(() => username = val),
           ),
-
-          // Email TextField
           _buildTextField(
             label: 'Email',
             icon: Icons.email,
@@ -124,8 +119,6 @@ class _EmailRegisterFormState extends State<EmailRegisterForm> {
             },
             onChanged: (val) => setState(() => email = val),
           ),
-
-          // Password TextField
           _buildTextField(
             label: 'Password',
             icon: Icons.lock,
@@ -133,8 +126,6 @@ class _EmailRegisterFormState extends State<EmailRegisterForm> {
             validator: _validatePassword,
             onChanged: (val) => setState(() => password = val),
           ),
-
-          // Confirm Password TextField
           _buildTextField(
             label: 'Confirm Password',
             icon: Icons.lock,
@@ -142,27 +133,23 @@ class _EmailRegisterFormState extends State<EmailRegisterForm> {
             validator: _validateConfirmPassword,
             onChanged: (val) => setState(() => confirmPassword = val),
           ),
-
-          SizedBox(height: 20), // Reduced space for a more compact layout
-
-          // Register Button
+          SizedBox(height: 20),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blueAccent, // Button color
+              backgroundColor: Colors.blueAccent,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30), // Rounded corners
+                borderRadius: BorderRadius.circular(30),
               ),
-              padding: EdgeInsets.symmetric(
-                  vertical: 12, horizontal: 40), // Reduced padding
-              elevation: 5, // Subtle shadow effect
+              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 40),
+              elevation: 5,
             ),
             onPressed: _registerWithEmailAndPassword,
             child: Text(
               'Register',
               style: TextStyle(
-                fontSize: 16, // Reduced font size for sleeker look
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.white, // Text color
+                color: Colors.white,
               ),
             ),
           ),
@@ -171,7 +158,6 @@ class _EmailRegisterFormState extends State<EmailRegisterForm> {
     );
   }
 
-  // Custom method to build the TextFields with icons and improved styling
   Widget _buildTextField({
     required String label,
     required IconData icon,
@@ -180,28 +166,24 @@ class _EmailRegisterFormState extends State<EmailRegisterForm> {
     required Function(String) onChanged,
   }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0), // Reduced padding
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: TextFormField(
         obscureText: obscureText,
         decoration: InputDecoration(
           labelText: label,
-          labelStyle: TextStyle(color: Colors.black54), // Slightly muted label
-          prefixIcon: Icon(icon, color: Colors.blueAccent), // Icon with color
+          labelStyle: TextStyle(color: Colors.black54),
+          prefixIcon: Icon(icon, color: Colors.blueAccent),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: Colors.blueAccent, width: 1.5), // Border color
-            borderRadius:
-                BorderRadius.circular(15), // Rounded corners for text fields
+            borderSide: BorderSide(color: Colors.blueAccent, width: 1.5),
+            borderRadius: BorderRadius.circular(15),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: Colors.blue, width: 2), // Focused border color
+            borderSide: BorderSide(color: Colors.blue, width: 2),
             borderRadius: BorderRadius.circular(15),
           ),
           filled: true,
-          fillColor: Colors.white, // Background color
-          contentPadding: EdgeInsets.symmetric(
-              vertical: 12, horizontal: 15), // Reduced padding
+          fillColor: Colors.white,
+          contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 15),
         ),
         validator: validator,
         onChanged: onChanged,

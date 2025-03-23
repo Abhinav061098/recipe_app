@@ -23,13 +23,13 @@ class CategoryIndicator extends StatelessWidget {
   Color _getCategoryColor(String category) {
     if (category.toLowerCase() == 'vegetarian' ||
         category.toLowerCase() == 'vegan') {
-      return Colors.green; // Vegetarian/Vegan
+      return Colors.green;
     } else if (category.toLowerCase() == 'seafood') {
-      return Colors.blue; // Seafood
+      return Colors.blue;
     } else if (category.toLowerCase() == 'dessert') {
       return Colors.orange;
     } else {
-      return Colors.red; // Non-Vegetarian (or other categories)
+      return Colors.red;
     }
   }
 }

@@ -1,6 +1,5 @@
-// lib/widgets/shimmer/random_meal_shimmer.dart
 import 'package:flutter/material.dart';
-import 'shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'shimmer_loading.dart';
 
 class RandomMealShimmer extends StatelessWidget {
   const RandomMealShimmer({super.key});
@@ -14,8 +13,8 @@ class RandomMealShimmer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
           child: ShimmerLoading(
             child: Container(
-              width: 150, // Approximate width of the title
-              height: 20, // Approximate height of the title
+              width: 150,
+              height: 20,
               color: Colors.grey[300],
             ),
           ),
@@ -25,9 +24,8 @@ class RandomMealShimmer extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: List.generate(10, (index) {
-              // Assuming 10 shimmer cards
               return Container(
-                width: 120, // Reduced width
+                width: 120,
                 margin: EdgeInsets.all(6.0),
                 child: Card(
                   elevation: 3,
@@ -43,7 +41,7 @@ class RandomMealShimmer extends StatelessWidget {
                         child: ShimmerLoading(
                           child: Container(
                             width: double.infinity,
-                            height: 100, // Reduced height
+                            height: 100,
                             color: Colors.grey[300],
                           ),
                         ),
@@ -52,7 +50,7 @@ class RandomMealShimmer extends StatelessWidget {
                         padding: const EdgeInsets.all(6.0),
                         child: ShimmerLoading(
                           child: Container(
-                            height: 16, // Approximate text height
+                            height: 16,
                             color: Colors.grey[300],
                           ),
                         ),

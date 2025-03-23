@@ -56,9 +56,9 @@ class RecipeCard extends StatelessWidget {
                         builder: (context, snapshot) {
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
-                            return CircularProgressIndicator(); // Or a placeholder
+                            return CircularProgressIndicator();
                           } else if (snapshot.hasError) {
-                            return Icon(Icons.error); // Or handle error
+                            return Icon(Icons.error);
                           } else {
                             final isFavorite = snapshot.data ?? false;
                             return IconButton(
@@ -69,8 +69,7 @@ class RecipeCard extends StatelessWidget {
                                 color: isFavorite ? Colors.red : null,
                               ),
                               onPressed: () {
-                                favoriteProvider
-                                    .toggleFavorite(recipe); // Pass the context
+                                favoriteProvider.toggleFavorite(recipe);
                               },
                             );
                           }

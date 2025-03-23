@@ -1,4 +1,3 @@
-// lib/screens/register_screen/widgets/loading_widget.dart
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -12,7 +11,7 @@ class LoadingWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Lottie.asset(
-            'assets/animations/loading.json', // Replace with your Lottie asset path
+            'assets/animations/loading.json',
             width: 100,
             height: 100,
           ),

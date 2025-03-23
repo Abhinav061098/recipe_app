@@ -1,6 +1,5 @@
-// lib/screens/shimmer/favorites_screen_shimmer.dart
 import 'package:flutter/material.dart';
-import 'package:soopfood/shimmers/shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'package:soopfood/shimmers/shimmer_loading.dart';
 
 class FavoritesScreenShimmer extends StatelessWidget {
   const FavoritesScreenShimmer({super.key});
@@ -10,8 +9,8 @@ class FavoritesScreenShimmer extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12),
       child: ListView.builder(
-        itemCount: 6, // Number of shimmer items (adjust as needed)
-        physics: const NeverScrollableScrollPhysics(), // Disable scrolling
+        itemCount: 6,
+        physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return ShimmerLoading(
             child: Card(
@@ -27,13 +26,13 @@ class FavoritesScreenShimmer extends StatelessWidget {
                   child: Container(
                     width: 60,
                     height: 60,
-                    color: Colors.grey[300], // Placeholder image
+                    color: Colors.grey[300],
                   ),
                 ),
                 title: Container(
-                  width: 150, // Approximate text width
-                  height: 16, // Approximate text height
-                  color: Colors.grey[400], // Placeholder text
+                  width: 150,
+                  height: 16,
+                  color: Colors.grey[400],
                 ),
                 trailing: Icon(Icons.favorite, color: Colors.redAccent),
               ),

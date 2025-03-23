@@ -1,6 +1,5 @@
-// lib/screens/shimmer/recipe_details_screen_shimmer.dart
 import 'package:flutter/material.dart';
-import 'package:soopfood/shimmers/shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'package:soopfood/shimmers/shimmer_loading.dart';
 
 class RecipeDetailsScreenShimmer extends StatelessWidget {
   const RecipeDetailsScreenShimmer({super.key});
@@ -12,7 +11,6 @@ class RecipeDetailsScreenShimmer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Shimmer for the image
             ShimmerLoading(
               child: Container(
                 width: double.infinity,
@@ -21,18 +19,16 @@ class RecipeDetailsScreenShimmer extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16),
-            // Shimmer for the title
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: ShimmerLoading(
                 child: Container(
-                  width: 200, // Approximate title width
-                  height: 24, // Approximate title height
+                  width: 200,
+                  height: 24,
                   color: Colors.grey[400],
                 ),
               ),
             ),
-            // Shimmer for category and cuisine
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: Row(
@@ -40,15 +36,15 @@ class RecipeDetailsScreenShimmer extends StatelessWidget {
                 children: [
                   ShimmerLoading(
                     child: Container(
-                      width: 100, // Approximate category width
-                      height: 20, // Approximate category height
+                      width: 100,
+                      height: 20,
                       color: Colors.grey[400],
                     ),
                   ),
                   ShimmerLoading(
                     child: Container(
-                      width: 100, // Approximate cuisine width
-                      height: 20, // Approximate cuisine height
+                      width: 100,
+                      height: 20,
                       color: Colors.grey[400],
                     ),
                   ),
@@ -56,18 +52,16 @@ class RecipeDetailsScreenShimmer extends StatelessWidget {
               ),
             ),
             Divider(thickness: 1),
-            // Shimmer for author
             Padding(
               padding: EdgeInsets.all(16.0),
               child: ShimmerLoading(
                 child: Container(
-                  width: 150, // Approximate author width
-                  height: 20, // Approximate author height
+                  width: 150,
+                  height: 20,
                   color: Colors.grey[400],
                 ),
               ),
             ),
-            // Shimmer for details row
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Row(
@@ -79,28 +73,22 @@ class RecipeDetailsScreenShimmer extends StatelessWidget {
               ),
             ),
             Divider(thickness: 1),
-            // Shimmer for instructions title
             _buildShimmerSectionTitle(),
-            // Shimmer for instructions text
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: ShimmerLoading(
                 child: Container(
                   width: double.infinity,
-                  height: 100, // Approximate instructions height
+                  height: 100,
                   color: Colors.grey[400],
                 ),
               ),
             ),
             Divider(thickness: 1),
-            // Shimmer for ingredients title
             _buildShimmerSectionTitle(),
-            // Shimmer for ingredients list
             _buildShimmerIngredientsList(),
             Divider(thickness: 1),
-            // Shimmer for steps title
             _buildShimmerSectionTitle(),
-            // Shimmer for steps list
             _buildShimmerStepsList(),
           ],
         ),
@@ -113,8 +101,8 @@ class RecipeDetailsScreenShimmer extends StatelessWidget {
       padding: EdgeInsets.all(16.0),
       child: ShimmerLoading(
         child: Container(
-          width: 120, // Approximate title width
-          height: 22, // Approximate title height
+          width: 120,
+          height: 22,
           color: Colors.grey[400],
         ),
       ),
@@ -130,8 +118,8 @@ class RecipeDetailsScreenShimmer extends StatelessWidget {
         SizedBox(height: 4),
         ShimmerLoading(
           child: Container(
-            width: 80, // Approximate text width
-            height: 16, // Approximate text height
+            width: 80,
+            height: 16,
             color: Colors.grey[400],
           ),
         ),
@@ -149,15 +137,15 @@ class RecipeDetailsScreenShimmer extends StatelessWidget {
             children: [
               ShimmerLoading(
                 child: Container(
-                  width: 120, // Approximate ingredient width
-                  height: 16, // Approximate ingredient height
+                  width: 120,
+                  height: 16,
                   color: Colors.grey[400],
                 ),
               ),
               ShimmerLoading(
                 child: Container(
-                  width: 40, // Approximate measure width
-                  height: 16, // Approximate measure height
+                  width: 40,
+                  height: 16,
                   color: Colors.grey[400],
                 ),
               ),
@@ -178,7 +166,7 @@ class RecipeDetailsScreenShimmer extends StatelessWidget {
           title: ShimmerLoading(
             child: Container(
               width: double.infinity,
-              height: 16, // Approximate step height
+              height: 16,
               color: Colors.grey[400],
             ),
           ),

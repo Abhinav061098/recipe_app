@@ -1,6 +1,5 @@
-// lib/widgets/shimmer/recently_viewed_recipes_shimmer.dart
 import 'package:flutter/material.dart';
-import 'package:soopfood/shimmers/shimmer_loading.dart'; // Import generic ShimmerLoading
+import 'package:soopfood/shimmers/shimmer_loading.dart';
 
 class RecentlyViewedRecipesShimmer extends StatelessWidget {
   const RecentlyViewedRecipesShimmer({super.key});
@@ -14,17 +13,17 @@ class RecentlyViewedRecipesShimmer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 8.0),
           child: ShimmerLoading(
             child: Container(
-              width: 200, // Approximate width of the title
-              height: 20, // Approximate height of the title
+              width: 200,
+              height: 20,
               color: Colors.grey[300],
             ),
           ),
         ),
         SizedBox(
-          height: 150.0, // Increased height
+          height: 150.0,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: 5, // Assuming 5 shimmer cards
+            itemCount: 5,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -45,18 +44,16 @@ class RecentlyViewedRecipesShimmer extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(14.0),
                           child: Container(
-                            // Placeholder for CachedNetworkImage
-                            width: 120.0, // Increased width
-                            height: 110.0, // Increased height
+                            width: 120.0,
+                            height: 110.0,
                             color: Colors.grey[300],
                           ),
                         ),
                       ),
                       SizedBox(height: 8.0),
                       Container(
-                        // Placeholder for text
-                        width: 120.0, // Adjusted width
-                        height: 16, // Approximate text height
+                        width: 120.0,
+                        height: 16,
                         color: Colors.grey[300],
                       ),
                     ],
