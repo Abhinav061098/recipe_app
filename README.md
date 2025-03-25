@@ -51,7 +51,7 @@ SpoonFood aims to simplify the process of discovering and preparing diverse reci
 ### Prerequisites
 
 -   Flutter SDK
--   Android Studio
+-   Android Studio / VS Code
 -   Firebase CLI (if using Firebase)
 -   Git
 
